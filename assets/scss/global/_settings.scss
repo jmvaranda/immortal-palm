@@ -60,6 +60,7 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$primary: #ffcd20;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -248,6 +249,7 @@ $button-sizes: (
   large: 1.25rem,
 );
 $button-opacity-disabled: 0.25;
+$button-transition: color 0.25s, box-shadow 0.5s, border-color 0.25s ease-in-out;
 
 // 12. Button Group
 // ----------------

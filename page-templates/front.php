@@ -9,17 +9,17 @@ get_header(); ?>
 		<div class="tagline">
 			<h1><?php bloginfo( 'name' ); ?></h1>
 			<h4 class="subheader"><?php bloginfo( 'description' ); ?></h4>
-			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Download FoundationPress</a>
+			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Register for classes</a>
 		</div>
 
-		<div id="watch">
+		<!-- <div id="watch">
 			<section id="stargazers">
 				<a href="https://github.com/olefredrik/foundationpress">1.5k stargazers</a>
 			</section>
 			<section id="twitter">
 				<a href="https://twitter.com/olefredrik">@olefredrik</a>
 			</section>
-		</div>
+		</div> -->
 	</div>
 
 </header>
@@ -87,7 +87,7 @@ get_header(); ?>
 	</div>
 
 	<div class="why-foundation">
-		<a href="/kitchen-sink">See what's in Foundation out of the box →</a>
+		<a href="/kitchen-sink">See why call to action →</a>
 	</div>
 
 </section>
