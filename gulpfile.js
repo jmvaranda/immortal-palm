@@ -13,7 +13,7 @@ var del         = require('del');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = 'http://localhost:81/wordpress';
+var URL = 'http://localhost:8080/wordpress';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
