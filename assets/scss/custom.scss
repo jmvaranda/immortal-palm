@@ -1,3 +1,10 @@
-body {
+// Last item in Nav use Primary Color
+.top-bar-right #menu-main li:last-child {
+  li {
 
+  }
+  a {
+   color:$white;
+   background-color: black;
+  }
 }
