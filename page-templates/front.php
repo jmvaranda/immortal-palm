@@ -92,6 +92,19 @@ get_header(); ?>
 
 </section>
 
+<section class="recent-updates">
+	<div class="news-posts">
+		<?php
+		// Get the last 4 News posts
+		query_posts( 'category_name=news&posts_per_page=4' ); ?>
+
+		<?php while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part( 'template-parts/content-front', get_post_format() ); ?>
+			<!-- Do special_cat stuff... -->
+		<?php endwhile; ?>
+	</div>
+</section>
+
 
 
 <?php get_footer();
