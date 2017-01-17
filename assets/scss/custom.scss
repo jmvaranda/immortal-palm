@@ -1,3 +1,19 @@
+// System Colors
+$black: #0a0a0a;
+
+// Group Label
+.label {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: .025rem;
+    background-color: black;
+    color: white;
+    padding: .75rem 1.25rem;
+    min-width: 4rem;
+    display: inline-block;
+}
+
 // Last item in Nav use Primary Color
 .top-bar-right #menu-main li:last-child {
   li {

@@ -21,7 +21,7 @@
 		background-size: cover;
 		background-position: top;
 		height: rem-calc(685);
-		margin: 0 0 rem-calc(72);
+		margin: 0 0 2rem;//rem-calc(72);
 	}
 
 	#watch {
@@ -84,10 +84,19 @@
 		}
 
 		@include breakpoint(medium) {
-			@include grid-column(6.95);
+			@include grid-column(7);
 			padding-top: 6rem;
 		}
-
+	}
+	.register-classes {
+		@include breakpoint(medium) {
+			@include grid-column(4);
+			margin-top:9rem;
+			//background-color: rgba(10, 10, 10, 0.3);
+			// box-shadow: none;
+			// border: 4px $black solid;
+			// color: $black;
+		}
 	}
 
 	h1 {
@@ -106,11 +115,15 @@
 
 	h4 {
 		color: #fefefe;
-		font-weight: 300;
+		//font-weight: 300;
 		font-size: 1.3125rem;
 	}
-
-	.download { margin-top: rem-calc(20); }
+	.tagline-overlay {
+		background-color: rgba(0, 0, 0, 0.3);
+		padding:1.7rem;
+	}
+	.register-classes { //margin-top: rem-calc(20);
+	}
 
 }
 
@@ -154,12 +167,23 @@
 		box-sizing: border-box;
 	}
 }
-
+// Content Main
+	#content-main {
+		position: relative;
+		@include breakpoint(small) {
+			top:-2rem;
+		}
+		@include breakpoint(medium) {
+			top:-12rem;
+		}
+	}
 
 // Benefits
 .benefits {
 	@include grid-row();
-	text-align: center;
+	position: relative;
+	//background-color: rgba(255, 255, 255, .8);
+	background-color: $white;
 
 	header {
 		@include grid-column(12);
@@ -174,7 +198,13 @@
 			color: #777;
 		}
 	}
-
+	.martial-arts {
+		@include grid-column(12);
+	}
+	.wing-chun, .tong-bei, .tai-chi {
+		//background-color: $white;
+		text-align: center;
+	}
 	.wing-chun,
 	.tong-bei,
 	.tai-chi,
@@ -193,7 +223,7 @@
 		}
 
 		h3 {
-			color: #0a0a0a;
+			color: $black;
 			font-weight: 300;
 			font-size: 1.75rem;
 		}
@@ -209,6 +239,27 @@
 	}
 
 }
+
+// Why UMC
+.why-umc {@include grid-row();}
+.testimonials-module {
+	@include grid-column(12)
+	.orbit {
+		margin:0 6rem;
+		h3 {
+			color: $black;
+			font-weight: 300;
+			font-size: 1.75rem;
+		}
+		.orbit-slide {
+			//margin:0 4rem;
+		}
+		.orbit-slide p, orbit-slide h3 {
+			margin:0 4rem;
+		}
+	}
+}
+
 
 // News
 .recent-updates {

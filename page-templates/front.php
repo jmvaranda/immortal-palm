@@ -4,35 +4,30 @@ Template Name: Front
 */
 get_header(); ?>
 
+
+
 <header id="front-hero" role="banner">
 	<div class="marketing">
 		<div class="tagline">
-			<h1><?php bloginfo( 'name' ); ?></h1>
-			<h4 class="subheader"><?php bloginfo( 'description' ); ?></h4>
-			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Sign up for classes</a>
+			<div class="tagline-overlay">
+				<h1><?php bloginfo( 'description');?></h1>
+				<h4 class="subheader">Understanding internal martial arts, physical health, and spiritual well-being. <a href="#">Learn more </a></h4>
+			</div>
 		</div>
-
-		<!-- <div id="watch">
-			<section id="stargazers">
-				<a href="https://github.com/olefredrik/foundationpress">1.5k stargazers</a>
-			</section>
-			<section id="twitter">
-				<a href="https://twitter.com/olefredrik">@olefredrik</a>
-			</section>
-		</div> -->
+		<a role="button" class="register-classes large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Sign up for classes</a>
 	</div>
 
 </header>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-<section class="intro" role="main">
+<!-- <section class="intro" role="main"> -->
 	<div class="fp-intro">
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 			<div class="entry-content">
-				<?php the_content(); ?>
+				<?php //the_content(); ?>
 			</div>
 			<footer>
 				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
@@ -49,53 +44,88 @@ get_header(); ?>
 <?php endwhile;?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
-<div class="section-divider">
-	<hr />
-</div>
-
+<section id="content-main">
 
 <section class="benefits">
-	<header>
-		<h2>Discover these martial arts to unlock your full potential</h2>
-		<h4>Foundation is the professional choice for designers, developers and teams. <br /> WordPress is by far, <a href="http://trends.builtwith.com/cms">the world's most popular CMS</a> (currently powering 38% of the web).</h4>
-	</header>
+	<div class="martial-arts">
+		<h2 class="label">Courses</h2>
+		<div class="martial-arts-grid">
+			<div class="wing-chun">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/wing-chun.svg" alt="wing-chun" class="svg">
+				<h3>Wing Chun</h3>
+				<p>Everything is semantic. You can have the cleanest markup without sacrificing the utility and speed of Foundation.</p>
+		</div>
 
-	<div class="wing-chun">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/wing-chun.svg" alt="semantic">
-		<h3>Wing Chun</h3>
-		<p>Everything is semantic. You can have the cleanest markup without sacrificing the utility and speed of Foundation.</p>
+			<div class="tong-bei">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tong-bei.svg" alt="tong-bei" class="svg">
+				<h3>Tong Bei</h3>
+				<p>You can build for small devices first. Then, as devices get larger and larger, layer in more complexity for a complete responsive design.</p>
+
+		</div>
+
+			<div class="tai-chi">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tai-chi.svg" alt="tai-chi" class="svg">
+				<h3>Tai Chi</h3>
+				<p>You can customize your build to include or remove certain elements, as well as define the size of columns, colors, font size and more.</p>
+			</div>
+
+		</div>
 	</div>
-
-	<div class="tong-bei">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tong-bei.svg" alt="responsive">
-		<h3>Tong Bei</h3>
-		<p>You can build for small devices first. Then, as devices get larger and larger, layer in more complexity for a complete responsive design.</p>
-
-	</div>
-
-	<div class="tai-chi">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tai-chi.svg" alt="customizable">
-		<h3>Tai Chi</h3>
-		<p>You can customize your build to include or remove certain elements, as well as define the size of columns, colors, font size and more.</p>
-
-	</div>
-
-	<!-- <div class="professional">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/demo/professional.svg" alt="professional">
-		<h3>Professional</h3>
-		<p>Millions of designers and developers depend on Foundation. We have business support, training and consulting to help grow your product or service.</p>
-	</div> -->
-
-	<div class="why-foundation">
-		<a href="/kitchen-sink">See why call to action →</a>
-	</div>
-
 </section>
 
+<hr>
+
+<section class="why-umc">
+
+	<div class="testimonials-module">
+
+		<h2 class="label">Testimonials</h2>
+
+			<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+				<ul class="orbit-container">
+					<button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+					<button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+					<li class="is-active orbit-slide">
+						<div>
+							<h3 class="text-center">Trevor says</h3>
+							<p class="text-center">"I have practiced traditional martial arts for well over 20 years. Everything from mma to Qi gong.  Although I have trained with pro fighters and world champions, I still learn something new from every session with Asher. And several things I thought I knew, he has taught me to do better. He has improved my MMA fight skills–stand-up and ground–and he has improved my health. Lots of people can talk a good game. Asher can do… and teach."</p>
+							<p><a href="#">Read full testimonial</a></p>
+						</div>
+					</li>
+					<li class="orbit-slide">
+						<div>
+							<h3 class="text-center">You can also throw some text in here!</h3>
+							<p class="text-center">"I have been training in various martial arts and combative systems for over 30 years including boxing, Thai boxing, and several military systems.  I hold ranks in a few, including of note Brazilian Jiu Jitsu and a WWII combatives-based system.  Currently I am a combatives instructor at a local company, which trains hundreds of people each year in real world self-defense.  Part of my job is to investigate new arts, systems, and training methods.  With the majority of these being just marketing hype or showy techniques that are difficult to perform under pressure, it is rare that I run across an authentic system that works; Asher Bowers’s Universal Martial Concepts is just such a system. He has successfully combined three martial arts, modernized them, and created a fighting system that captures the intensity and training of MMA with the hard-hitting power of internal martial arts.  With his advanced knowledge of body mechanics, understanding of the fight, and ability to teach how to generate intense power on demand, he has developed a system that people can learn and use well into their old age."</p>
+						</div>
+					</li>
+					<li class="orbit-slide">
+						<div>
+							<h3 class="text-center">You can also throw some text in here!</h3>
+							<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+						</div>
+					</li>
+					<li class="orbit-slide">
+						<div>
+							<h3 class="text-center">You can also throw some text in here!</h3>
+							<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+						</div>
+					</li>
+				</ul>
+				<nav class="orbit-bullets">
+				 <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+				 <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+				 <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+				 <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+			 </nav>
+		 </div>
+	</div>
+</section>
+<hr>
 <section class="recent-updates">
 	<div class="news-posts">
+		<h2 class="label">News</h2>
 		<?php
-		// Get the last 4 News posts
+		// Get the last 4 News posts test
 		query_posts( 'category_name=news&posts_per_page=4' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -103,8 +133,14 @@ get_header(); ?>
 			<!-- Do special_cat stuff... -->
 		<?php endwhile; ?>
 	</div>
+
+	<div>
+	</div>
+
 </section>
 
+</section>
+<!-- End Content Main -->
 
 
 <?php get_footer();
