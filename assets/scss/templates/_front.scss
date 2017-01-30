@@ -5,8 +5,13 @@
 		max-width: 55rem;
 	}
 
+	.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
 	@include breakpoint(small) {
-		background: url('../images/hero-bg.jpg') top center;
+		//background: url('../images/hero-bg.jpg') top center;
 		background-size: cover;
 		background-position: top;
 		padding: rem-calc(65%) 0;
@@ -17,7 +22,7 @@
 	}
 
 	@include breakpoint(medium) {
-		background: url('../images/hero-bg.jpg') top center;
+		//background: url('../images/hero-bg.jpg') top center;
 		background-size: cover;
 		background-position: top;
 		height: rem-calc(685);

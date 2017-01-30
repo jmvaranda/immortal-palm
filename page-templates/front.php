@@ -4,9 +4,15 @@ Template Name: Front
 */
 get_header(); ?>
 
+<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/hero-bg.jpg">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/hero-bg.jpg" alt=""/>
+
+</div> -->
+
+<header id="front-hero" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/hero-bg.jpg">
 
 
-<header id="front-hero" role="banner">
+
 	<div class="marketing">
 		<div class="tagline">
 			<div class="tagline-overlay">
@@ -16,8 +22,8 @@ get_header(); ?>
 		</div>
 		<a role="button" class="register-classes large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Sign up for classes</a>
 	</div>
-
 </header>
+
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -49,6 +55,9 @@ get_header(); ?>
 <section class="benefits">
 	<div class="martial-arts">
 		<h2 class="label">Courses</h2>
+
+
+
 		<div class="martial-arts-grid">
 			<div class="wing-chun">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/wing-chun.svg" alt="wing-chun" class="svg">
