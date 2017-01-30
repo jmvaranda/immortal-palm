@@ -10,8 +10,8 @@ get_header(); ?>
 	<div class="marketing">
 		<div class="tagline">
 			<div class="tagline-overlay">
-				<h1><?php bloginfo( 'description');?></h1>
-				<h4 class="subheader">Understanding internal martial arts, physical health, and spiritual well-being. <a href="#">Learn more </a></h4>
+				<h3><?php bloginfo( 'description');?></h3>
+				<h4 class="subheader">Understanding internal martial arts, physical health, and spiritual well-being.<a href="#">Learn more </a></h4>
 			</div>
 		</div>
 		<a role="button" class="register-classes large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Sign up for classes</a>
