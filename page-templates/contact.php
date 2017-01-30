@@ -18,6 +18,43 @@ get_header(); ?>
       <div class="entry-content">
           <?php the_content(); ?>
       </div>
+
+      <form data-abide="ikndvs-abide" novalidate="">
+					  <div data-abide-error="" class="alert callout" style="display: none;">
+					    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+					  </div>
+					  <div class="row">
+					    <div class="small-12 columns">
+					      <label>Number Required
+					        <input type="text" placeholder="1234" aria-describedby="exampleHelpText" required="" pattern="number">
+					        <span class="form-error">
+					          Yo, you had better fill this out, it's required.
+					        </span>
+					      </label>
+					      <p class="help-text" id="exampleHelpText">Here's how you use this input field!</p>
+					    </div>
+					    <div class="small-12 columns">
+					      <label>Nothing Required!
+					        <input type="text" placeholder="Use me, or don't" aria-describedby="exampleHelpTex" data-abide-ignore="">
+					      </label>
+					      <p class="help-text" id="exampleHelpTex">This input is ignored by Abide using `data-abide-ignore`</p>
+					    </div>
+					  </div>
+					  <div class="row">
+					    <fieldset class="large-6 columns">
+					      <legend>Check these out</legend>
+					      <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+					      <input id="checkbox2" type="checkbox" required=""><label for="checkbox2">Checkbox 2</label>
+					      <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+					    </fieldset>
+					  </div>
+					  <div class="row">
+					    <fieldset class="large-6 columns">
+					      <button class="button" type="submit" value="Submit">Submit</button>
+					    </fieldset>
+					  </div>
+					</form>
+
       <footer>
           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
           <p><?php the_tags(); ?></p>

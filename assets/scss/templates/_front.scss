@@ -1,3 +1,7 @@
+$black: #0a0a0a;
+$brand: #ffcd20;
+$link: #1a77bd;
+
 // Page header
 #front-hero {
 	.marketing {
@@ -210,6 +214,13 @@
 	.wing-chun, .tong-bei, .tai-chi {
 		//background-color: $white;
 		text-align: center;
+		display: block;
+		color: inherit;
+		border-bottom: none;
+		&:hover {
+			background-color:#f9f9f9;
+			cursor: pointer;
+		}
 	}
 	.wing-chun,
 	.tong-bei,

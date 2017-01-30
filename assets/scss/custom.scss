@@ -1,7 +1,16 @@
 // System Colors
 $black: #0a0a0a;
+$brand: #ffcd20;
+$link: #1a77bd;
+
+// Inline link styles
+a {
+  border-bottom:1px solid $link;
+  padding-bottom:2px;
+}
 
 // Group Label
+a.label {}
 .label {
     text-transform: uppercase;
     font-size: 1rem;
@@ -12,15 +21,18 @@ $black: #0a0a0a;
     padding: .75rem 1.25rem;
     min-width: 4rem;
     display: inline-block;
+    a {color:inherit;}
+    &:hover {
+      background-color: $link;
+      cursor: pointer;
+    }
 }
 
 // Last item in Nav use Primary Color
-.top-bar-right #menu-main li:last-child {
-  li {
-
-  }
+#menu-main > li:last-child {
   a {
    color:$white;
    background-color: black;
+   border-bottom: 2px solid $brand;
   }
 }
