@@ -12,10 +12,16 @@
 
 		</section>
 		<div id="footer-container">
+
 			<footer id="footer">
+				<div class="brand large-4 columns footer-item">
+					<a href="#">&copy; <?php echo date('Y'); ?>
+					<?php bloginfo( 'name' ); ?></a>
+				</div>
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
+
 			</footer>
 		</div>
 

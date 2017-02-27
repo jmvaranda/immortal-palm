@@ -1,12 +1,31 @@
 // System Colors
 $black: #0a0a0a;
+$black2: #222222;
 $brand: #ffcd20;
 $link: #1a77bd;
 
 // Inline link styles
-a {
+#content-main a, .tagline-overlay a {
   border-bottom:1px solid $link;
   padding-bottom:2px;
+}
+#content-main .martial-arts a {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+//
+#content-main blockquote {
+  //border-left: none;
+}
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
 }
 
 // Group Label
@@ -34,5 +53,31 @@ a.label {}
    color:$white;
    background-color: black;
    border-bottom: 2px solid $brand;
+  }
+}
+
+.top-bar-left {
+   a{
+    border-bottom: none;
+    color:inherit;
+  }
+}
+
+#footer-container {
+  background: -webkit-linear-gradient($black2, $black);
+  background: -o-linear-gradient($black2, $black);
+  background: -moz-linear-gradient($black2, $black);
+  background: linear-gradient($black2, $black);
+  color: $white;
+}
+#footer {
+  .brand {
+    padding: 0.7rem 1rem;
+    a {
+      color:$white;
+    }
+  }
+  .footer-item {
+    line-height:1rem;
   }
 }

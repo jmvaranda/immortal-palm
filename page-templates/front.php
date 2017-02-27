@@ -105,8 +105,7 @@ get_header(); ?>
 					<?php
 					// WP_Query arguments
 					 $args = array(
-						 //'name'                   => 'testimonial',
-						 'post_type'              => array( 'post' ),
+						 'post_type' => array( 'post' ),
 						 'category_name' => 'testimonial',
 						 'posts_per_page' => 4,
 					 );
@@ -119,31 +118,14 @@ get_header(); ?>
 							 $query->the_post();
 							?>
 							 <li class="is-active orbit-slide">
-		 						<div>
-		 							<h3 class="text-center"><?php the_title();?> says</h3>
-		 							<p class="text-center"><?php //the_content();
-									the_excerpt();?></p>
-		 							<p class="text-center"><a href="#">Read full testimonial</a></p>
-		 						</div>
+
+		 							<h3 class=""><?php the_title();?> says</h3>
+								<blockquote>
+		 							<quote class=""><?php //the_content();
+									the_excerpt();?></quote>
+		 							<p class=""><a href="#">Read full testimonial</a></p>
+		 						</blockquote>
 		 					</li>
-		 					<!-- <li class="orbit-slide">
-		 						<div>
-		 							<h3 class="text-center">You can also throw some text in here!</h3>
-		 							<p class="text-center">"I have been training in various martial arts and combative systems for over 30 years including boxing, Thai boxing, and several military systems.  I hold ranks in a few, including of note Brazilian Jiu Jitsu and a WWII combatives-based system.  Currently I am a combatives instructor at a local company, which trains hundreds of people each year in real world self-defense.  Part of my job is to investigate new arts, systems, and training methods.  With the majority of these being just marketing hype or showy techniques that are difficult to perform under pressure, it is rare that I run across an authentic system that works; Asher Bowers’s Universal Martial Concepts is just such a system. He has successfully combined three martial arts, modernized them, and created a fighting system that captures the intensity and training of MMA with the hard-hitting power of internal martial arts.  With his advanced knowledge of body mechanics, understanding of the fight, and ability to teach how to generate intense power on demand, he has developed a system that people can learn and use well into their old age."</p>
-		 						</div>
-		 					</li>
-		 					<li class="orbit-slide">
-		 						<div>
-		 							<h3 class="text-center">You can also throw some text in here!</h3>
-		 							<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-		 						</div>
-		 					</li>
-		 					<li class="orbit-slide">
-		 						<div>
-		 							<h3 class="text-center">You can also throw some text in here!</h3>
-		 							<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-		 						</div>
-		 					</li> -->
 							<?php }} else {
 						 // no posts found
 					 }
@@ -160,19 +142,46 @@ get_header(); ?>
 		 </div>
 
 	</div>
+	<?php include ('gallery-side.php'); ?>
+	<?php // echo do_shortcode('[gallery columns="4" size="fp-medium" ids="74,75,76,77,78"]'); ?>
+
+
 </section>
 <hr>
+
+
+
+
+
 <section class="recent-updates">
 	<div class="news-posts">
 		<h2 class="label">News</h2>
-		<?php
-		// Get the last 4 News posts test
-		// query_posts( 'category_name=news&posts_per_page=4' ); ?>
 
-		<?php // while ( have_posts() ) : the_post(); ?>
-		<?php // get_template_part( 'template-parts/content-front', get_post_format() ); ?>
-			<!-- Do special_cat stuff... -->
-		<?php // endwhile; ?>
+		<?php
+		// WP_Query arguments
+		 $args = array(
+			 'post_type' => array( 'post' ),
+			 'category_name' => 'news',
+			 'posts_per_page' => 4,
+		 );
+		 // The Query
+		 $query = new WP_Query( $args );
+
+		 // The Loop
+		 if ( $query->have_posts() ) {
+			 while ( $query->have_posts() ) {
+				 $query->the_post();	?>
+
+						<h3><?php the_title();?> says</h3>
+						<p><?php the_content();?></p>
+
+				<?php }} else {
+			 // no posts found
+		 }
+		 // Restore original Post Data
+		 wp_reset_postdata();
+		?>
+
 	</div>
 
 	<div>

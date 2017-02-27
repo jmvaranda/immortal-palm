@@ -2,7 +2,8 @@
   background: none;
   font-size: 1.25rem;
   font-weight: bold;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  //box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 4px 4px 4px rgba(0,0,0,.2);
   //border-radius: 3px;
   border: 4px white solid;
   transition: $button-transition;

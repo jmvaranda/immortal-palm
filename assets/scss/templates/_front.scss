@@ -1,6 +1,34 @@
 $black: #0a0a0a;
+$black2: #222222;
 $brand: #ffcd20;
+//$brand: #E74C3C;
 $link: #1a77bd;
+
+@mixin single-text-shadow($hoff: false, $voff: false, $blur: false, $spread: false, $color: false) {
+  // A lot of people think the color comes first. It doesn't.
+  @if type-of($hoff) == color {
+    $temp-color: $hoff;
+    $hoff: $voff;
+    $voff: $blur;
+    $blur: $spread;
+    $spread: $color;
+    $color: $temp-color;
+  }
+  // Can't rely on default assignment with multiple supported argument orders.
+  $hoff: if($hoff, $hoff, $default-text-shadow-h-offset);
+  $voff: if($voff, $voff, $default-text-shadow-v-offset);
+  $blur: if($blur, $blur, $default-text-shadow-blur);
+  $spread: if($spread, $spread, $default-text-shadow-spread);
+  $color: if($color, $color, $default-text-shadow-color);
+  // We don't need experimental support for this property.
+  @if $color == none or $hoff == none {
+    @include text-shadow(none);
+  }
+  @else {
+    @include text-shadow(compact($hoff $voff $blur $spread $color));
+  }
+}
+
 
 // Page header
 #front-hero {
@@ -94,14 +122,14 @@ $link: #1a77bd;
 
 		@include breakpoint(medium) {
 			@include grid-column(7);
-			padding-top: 6rem;
+			padding-top: 12rem;
 		}
 		h3 {}
 	}
 	.register-classes {
 		@include breakpoint(medium) {
 			@include grid-column(4);
-			margin-top:9rem;
+			margin-top:16rem;
 			//background-color: rgba(10, 10, 10, 0.3);
 			// box-shadow: none;
 			// border: 4px $black solid;
@@ -110,8 +138,8 @@ $link: #1a77bd;
 	}
 
 	.tagline h3 {
-		color: #fff;
-		font-weight: 600;
+		color: $white;
+		font-weight: 500;
 
 		@include breakpoint(small) {
 			//font-size: 2.2rem;
@@ -120,21 +148,30 @@ $link: #1a77bd;
 		@include breakpoint(medium) {
 			//font-size: 2.875rem;
 		}
-
 	}
 
 	h4 {
-		color: #fefefe;
+		color: $white;
+    opacity: .6;
 		//font-weight: 300;
 		font-size: 1.3125rem;
 	}
 	.tagline-overlay {
-		background-color: rgba(0, 0, 0, 0.3);
+		background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 4px 4px 4px rgba(0,0,0,.1);
 		padding:1.7rem;
+    //border: 4px solid $white;
 	}
 	.register-classes { //margin-top: rem-calc(20);
+		//color: $white;
+		//text-shadow: 1px 1px $black;
+		background-color:rgba(0,0,0,.1);
 	}
 
+}
+
+.see-more {
+  margin-top:.75rem;
 }
 
 // Intro
@@ -211,6 +248,7 @@ $link: #1a77bd;
 	.martial-arts {
 		@include grid-column(12);
 	}
+
 	.wing-chun, .tong-bei, .tai-chi {
 		//background-color: $white;
 		text-align: center;
@@ -260,9 +298,20 @@ $link: #1a77bd;
 // Why UMC
 .why-umc {@include grid-row();}
 .testimonials-module {
-	@include grid-column(12)
+  @include breakpoint(medium) {
+    @include grid-column(8);
+  }
+
+  @include breakpoint(small) {
+    @include grid-column(12);
+  }
+  h2.label {
+    //margin-bottom: 0;
+  }
 	.orbit {
-		margin:0 6rem;
+		//margin:0 6rem;
+    background-color: rgba(0, 0, 0, 0.025);
+    padding: 2.75rem 0rem;
 		h3 {
 			color: $black;
 			font-weight: 300;
@@ -270,13 +319,34 @@ $link: #1a77bd;
 		}
 		.orbit-slide {
 			//margin:0 4rem;
+      margin:0 auto;
+      width: 80%;
 		}
 		.orbit-slide p, orbit-slide h3 {
-			margin:0 4rem;
+			margin:0 2rem;
 		}
 	}
 }
+.gallery-side {
+  @include breakpoint(medium) {
+    @include grid-column(4);
+  }
 
+  @include breakpoint(small) {
+    @include grid-column(12);
+  }
+
+  h2.label {
+    //margin-bottom: 0;
+  }
+  .gallery-content {
+    a {
+      border-bottom: none !important;
+      display: inline-block;
+      padding: 0 !important;
+    }
+  }
+}
 
 // News
 .recent-updates {
