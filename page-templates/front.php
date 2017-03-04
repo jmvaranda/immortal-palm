@@ -20,12 +20,13 @@ get_header(); ?>
 
 				<h4 class="subheader">
 					Understanding internal martial arts, physical health, and spiritual well-being.</h4>
-					<a href="#">Learn more </a>
+					<a href="#" class="inline-button">Learn more </a>
 
 			</div>
 		</div>
 		<a role="button" class="register-classes large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Sign up for classes</a>
 	</div>
+	<div class="hero-gradient"></div>
 </header>
 
 
@@ -98,11 +99,12 @@ get_header(); ?>
 		<h2 class="label">Testimonials</h2>
 
 			<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-				<ul class="orbit-container">
-					<button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-					<button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+				<button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+				<button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
 
+				<ul class="orbit-container">
 					<?php
+					// Show last 4 testimonial posts in Orbit slider
 					// WP_Query arguments
 					 $args = array(
 						 'post_type' => array( 'post' ),
@@ -123,7 +125,7 @@ get_header(); ?>
 								<blockquote>
 		 							<quote class=""><?php //the_content();
 									the_excerpt();?></quote>
-		 							<p class=""><a href="#">Read full testimonial</a></p>
+		 							<p><a class="inline-button" href="#">Read full testimonial</a></p>
 		 						</blockquote>
 		 					</li>
 							<?php }} else {
@@ -153,16 +155,17 @@ get_header(); ?>
 
 
 
-<section class="recent-updates">
+<section class="recent-updates-contact">
 	<div class="news-posts">
 		<h2 class="label">News</h2>
+
 
 		<?php
 		// WP_Query arguments
 		 $args = array(
 			 'post_type' => array( 'post' ),
 			 'category_name' => 'news',
-			 'posts_per_page' => 4,
+			 'posts_per_page' => 3,
 		 );
 		 // The Query
 		 $query = new WP_Query( $args );
@@ -171,10 +174,26 @@ get_header(); ?>
 		 if ( $query->have_posts() ) {
 			 while ( $query->have_posts() ) {
 				 $query->the_post();	?>
-
-						<h3><?php the_title();?> says</h3>
-						<p><?php the_content();?></p>
-
+				 <article class="post-<?php the_ID();?>">
+						<?php
+							// Featured image
+							if ( has_post_thumbnail() ) {?>
+							<div class="featured media">
+								<?php the_post_thumbnail( 'category-thumb' ); ?></div>
+						<?php }?>
+						<div class="recent-content">
+							<h3>
+								<a href="<?php the_permalink();?>"><?php the_title();?></a>
+							</h3>
+							<div class="recent-excerpt">
+								<?php //the_content();
+										the_excerpt();
+								?>
+								<a href="<?php the_permalink();?>">See full post →</a>
+							</div>
+						</div>
+						<!-- <hr> -->
+						</article>
 				<?php }} else {
 			 // no posts found
 		 }
@@ -184,10 +203,55 @@ get_header(); ?>
 
 	</div>
 
-	<div>
-	</div>
+	<div class="contact-side">
+		<h2 class="label">Register</h2>
+		<p>Interested? Please fill out information below to register now.</p>
+		<form class="">
 
-</section>
+		  <label>First name
+		    <input type="text" placeholder="First Name" aria-describedby="exampleHelpText">
+		  </label>
+
+		  <label>Last name
+		    <input type="text" placeholder="Last Name" aria-describedby="exampleHelpText">
+		  </label>
+
+		  <label class="">Are you looking for Group or Individual classes?
+		    <select>
+		      <option value="null">Select option</option>
+		      <option value="group">Group</option>
+		      <option value="individual">Individual</option>
+		      <option value="both">Both</option>
+		      <option value="unsure">Not sure</option>
+		    </select>
+		  </label>
+
+		  <label class="">Rate your experience
+		    <select>
+		      <option value="null">Select option</option>
+		      <option value="beginner">Beginner</option>
+		      <option value="intermediate">Intermediate</option>
+		      <option value="expert">Expert</option>
+		    </select>
+		  </label>
+		  <p class="help-text" id="exampleHelpText">*Not required</p>
+
+		  <fieldset class="">
+		    <label>Rate your experience</label>
+		    <input type="radio" name="experience" value="beginner" id="experienceBeginner" required><label for="experienceBeginner">Beginner</label>
+		    <input type="radio" name="experience" value="intermediate" id="experienceIntermediate"><label for="experienceIntermediate">Intermediate</label>
+		    <input type="radio" name="experience" value="expert" id="experienceExpert"><label for="experienceExpert">Expert</label>
+		  </fieldset>
+		  <label>
+		    Got a question?
+		    <textarea placeholder="Leave a message"></textarea>
+		  </label>
+
+		  <button class="button" type="submit" value="Submit">Submit</button>
+
+		</form>
+		</div>
+	</section>
 
 </section>
 <!-- End Content Main -->

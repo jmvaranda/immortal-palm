@@ -28,6 +28,9 @@ function foundationpress_theme_support() {
 
 	// Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'category-thumb', 900, 9999 ); //300 pixels wide (and unlimited height)
+
+
 
 	// RSS thingy
 	add_theme_support( 'automatic-feed-links' );
@@ -37,6 +40,7 @@ function foundationpress_theme_support() {
 
 	// Declare WooCommerce support per http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
 	add_theme_support( 'woocommerce' );
+
 }
 
 add_action( 'after_setup_theme', 'foundationpress_theme_support' );
