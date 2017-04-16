@@ -18,6 +18,9 @@
           $query->the_post();
           //the_content();
           echo do_shortcode('[gallery columns="2" type="rgg" size="fp-medium" ids="74,75,76,77"]');
+          // Local Dev: ids="74,75,76,77"
+          // Production: ids="94,90,93,91"
+
         }
       } else {
         // no posts found

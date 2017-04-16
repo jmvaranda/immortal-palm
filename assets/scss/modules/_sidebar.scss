@@ -1,3 +1,8 @@
+$background-gray: rgba(0,0,0,0.025);
+@mixin background-gray($background-gray) {
+  background-color: $background-gray;
+}
+
 .sidebar {
   @include breakpoint(small) {
     @include grid-column(12);
@@ -5,6 +10,7 @@
 
   @include breakpoint(medium) {
     @include grid-column(4);
-    margin-top: 1rem;
   }
+  padding:1.25rem;
+  @include background-gray($background-gray);
 }

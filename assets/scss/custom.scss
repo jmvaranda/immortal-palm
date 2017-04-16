@@ -75,7 +75,7 @@ q:after {
   height:100%;
   &:hover {
     color:$white;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba($link,.8);
     @include transition-main(300ms);
   }
 }
@@ -99,6 +99,10 @@ a.label {}
       cursor: pointer;
     }
 }
+
+// Post Styles
+
+
 
 // Last item in Nav use Primary Color
 #menu-main > li:last-child {

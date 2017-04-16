@@ -9,6 +9,7 @@ get_header(); ?>
 
 </div> -->
 
+
 <header id="front-hero" role="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/hero-bg.jpg">
 
 
@@ -69,22 +70,22 @@ get_header(); ?>
 
 
 		<div class="martial-arts-grid">
-			<a class="wing-chun" href="#">
+			<a class="wing-chun" href="<?php echo site_url();?>/martial-arts/wing-chun/">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/wing-chun.svg" alt="wing-chun" class="svg">
 				<h3>Wing Chun</h3>
-				<p>Everything is semantic. You can have the cleanest markup without sacrificing the utility and speed of Foundation.</p>
+				<p>Wing chun is designed to defeat your opponent by redirecting the force of incoming strikes while attacking simultaneously. </p>
 			</a>
 
-			<a class="tong-bei" href="#">
+			<a class="tong-bei" href="<?php echo site_url();?>/martial-arts/tong-bei/">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tong-bei.svg" alt="tong-bei" class="svg">
 				<h3>Tong Bei</h3>
-				<p>You can build for small devices first. Then, as devices get larger and larger, layer in more complexity for a complete responsive design.</p>
+				<p>Tong Bei is an aggressive long to mid range martial art that employs fast, relaxed and precise movements to attack your opponent.</p>
 			</a>
 
-			<a class="tai-chi" href="#">
+			<a class="tai-chi" href="<?php echo site_url();?>/martial-arts/tai-chi/">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tai-chi.svg" alt="tai-chi" class="svg">
 				<h3>Tai Chi</h3>
-				<p>You can customize your build to include or remove certain elements, as well as define the size of columns, colors, font size and more.</p>
+				<p>Tai chi is a 500 year old martial art based on relaxed circular movements. Its training principals are the same as wing chun: root, structure and sensitivity.</p>
 			</a>
 
 		</div>
@@ -109,7 +110,7 @@ get_header(); ?>
 					 $args = array(
 						 'post_type' => array( 'post' ),
 						 'category_name' => 'testimonial',
-						 'posts_per_page' => 4,
+						 'posts_per_page' => 3,
 					 );
 					 // The Query
 					 $query = new WP_Query( $args );
@@ -139,7 +140,6 @@ get_header(); ?>
 				 <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
 				 <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
 				 <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-				 <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
 			 </nav>
 		 </div>
 
@@ -179,7 +179,7 @@ get_header(); ?>
 							// Featured image
 							if ( has_post_thumbnail() ) {?>
 							<div class="featured media">
-								<?php the_post_thumbnail( 'category-thumb' ); ?></div>
+								<?php // the_post_thumbnail( 'category-thumb' ); ?></div>
 						<?php }?>
 						<div class="recent-content">
 							<h3>
@@ -192,8 +192,9 @@ get_header(); ?>
 								<a href="<?php the_permalink();?>">See full post →</a>
 							</div>
 						</div>
-						<!-- <hr> -->
+
 						</article>
+						<hr>
 				<?php }} else {
 			 // no posts found
 		 }

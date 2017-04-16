@@ -26,6 +26,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/assets/javascript/foundation.js', array('jquery'), '2.6.1', true );
 
 	// Load Parallax
+	// wp_enqueue_script( 'foundation-sticky', get_template_directory_uri() . '/assets/javascript/foundation.sticky.js');
+
+	// Load Parallax
 	wp_enqueue_script( 'parallax', get_template_directory_uri() . '/assets/javascript/custom/parallax.min.js');
 
 	// Add the comment-reply library on pages where it is necessary

@@ -362,10 +362,7 @@ $background-gray: rgba(0,0,0,0.025);
     }
 		text-align: left;
     article {
-      background-color: rgba(0, 0, 0, 0.025);
       position: relative;
-      min-height: 19rem;
-      margin-bottom: 4rem;
       .featured {
         margin-left:-3rem;
         clip-path: inset(1rem 1rem 1rem 1rem);
@@ -374,9 +371,6 @@ $background-gray: rgba(0,0,0,0.025);
       .recent-content {
         padding: 1.25rem;
         margin: 1.25rem;
-        background-color: rgba(255,255,255,.8);
-        position: absolute;
-        top: 2.25rem ;
       }
       h3 a {border:none;}
     }
