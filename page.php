@@ -16,9 +16,11 @@
 
  <div id="page" role="main">
 
+
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+        <?php custom_breadcrumbs(); ?>
        <header>
            <h1 class="entry-title"><?php the_title(); ?></h1>
        </header>

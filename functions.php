@@ -41,6 +41,9 @@ require_once( 'library/theme-support.php' );
 /** Add Nav Options to Customer */
 require_once( 'library/custom-nav.php' );
 
+/** Add Breadcrumbs */
+require_once( 'library/breadcrumbs.php' );
+
 /** Change WP's sticky post class */
 require_once( 'library/sticky-posts.php' );
 
