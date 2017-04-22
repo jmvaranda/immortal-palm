@@ -46,7 +46,9 @@
       background-color: #2a2a2a;
     }
   }
-
+  .current-menu-ancestor, .current-menu-item {
+    > a {background-color: #2a2a2a;}
+  }
   .menu>li:not(.menu-text)>a { padding: 1rem; }
   .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
 

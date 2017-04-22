@@ -75,13 +75,13 @@ get_header(); ?>
 				<h3>Wing Chun</h3>
 				<p>Wing chun is designed to defeat your opponent by redirecting the force of incoming strikes while attacking simultaneously. </p>
 			</a>
-
+			<hr class="show-for-small-only">
 			<a class="tong-bei" href="<?php echo site_url();?>/martial-arts/tong-bei/">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tong-bei.svg" alt="tong-bei" class="svg">
 				<h3>Tong Bei</h3>
 				<p>Tong Bei is an aggressive long to mid range martial art that employs fast, relaxed and precise movements to attack your opponent.</p>
 			</a>
-
+			<hr class="show-for-small-only">
 			<a class="tai-chi" href="<?php echo site_url();?>/martial-arts/tai-chi/">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tai-chi.svg" alt="tai-chi" class="svg">
 				<h3>Tai Chi</h3>
@@ -207,50 +207,8 @@ get_header(); ?>
 	<div class="contact-side">
 		<h2 class="label">Register</h2>
 		<p>Interested? Please fill out information below to register now.</p>
-		<form class="">
+		<?php echo do_shortcode('[contact-form-7 id="112" title="Register"]');?>
 
-		  <label>First name
-		    <input type="text" placeholder="First Name" aria-describedby="exampleHelpText">
-		  </label>
-
-		  <label>Last name
-		    <input type="text" placeholder="Last Name" aria-describedby="exampleHelpText">
-		  </label>
-
-		  <label class="">Are you looking for Group or Individual classes?
-		    <select>
-		      <option value="null">Select option</option>
-		      <option value="group">Group</option>
-		      <option value="individual">Individual</option>
-		      <option value="both">Both</option>
-		      <option value="unsure">Not sure</option>
-		    </select>
-		  </label>
-
-		  <label class="">Rate your experience
-		    <select>
-		      <option value="null">Select option</option>
-		      <option value="beginner">Beginner</option>
-		      <option value="intermediate">Intermediate</option>
-		      <option value="expert">Expert</option>
-		    </select>
-		  </label>
-		  <p class="help-text" id="exampleHelpText">*Not required</p>
-
-		  <fieldset class="">
-		    <label>Rate your experience</label>
-		    <input type="radio" name="experience" value="beginner" id="experienceBeginner" required><label for="experienceBeginner">Beginner</label>
-		    <input type="radio" name="experience" value="intermediate" id="experienceIntermediate"><label for="experienceIntermediate">Intermediate</label>
-		    <input type="radio" name="experience" value="expert" id="experienceExpert"><label for="experienceExpert">Expert</label>
-		  </fieldset>
-		  <label>
-		    Got a question?
-		    <textarea placeholder="Leave a message"></textarea>
-		  </label>
-
-		  <button class="button" type="submit" value="Submit">Submit</button>
-
-		</form>
 		</div>
 	</section>
 
