@@ -3,7 +3,7 @@
 function custom_breadcrumbs() {
 
     // Settings
-    $separator          = '&gt;';
+    //$separator          = '&gt;';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
     $home_title         = 'UMC';
@@ -22,7 +22,7 @@ function custom_breadcrumbs() {
 
         // Home page
         echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
-        echo '<li class="separator separator-home"> ' . $separator . ' </li>';
+        // echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
 
@@ -134,7 +134,9 @@ function custom_breadcrumbs() {
                 if ( !isset( $parents ) ) $parents = null;
                 foreach ( $anc as $ancestor ) {
                     $parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
-                    $parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
+                    //
+                    // Remove extra "/" between parent items
+                    // $parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
                 }
 
                 // Display parent pages
@@ -224,7 +226,7 @@ function custom_breadcrumbs() {
             echo '<li>' . 'Error 404' . '</li>';
         }
 
-        echo '</ul>';
+        echo '<hr> </ul>';
 
     }
 

@@ -207,8 +207,10 @@ get_header(); ?>
 	<div class="contact-side">
 		<h2 class="label">Register</h2>
 		<p>Interested? Please fill out information below to register now.</p>
-		<?php echo do_shortcode('[contact-form-7 id="112" title="Register"]');?>
-
+		<?php
+			//Contact ID for local server
+			// echo do_shortcode('[contact-form-7 id="112" title="Register"]');?>
+		<?php echo do_shortcode('[contact-form-7 id="150" title="Register classes"]');?>
 		</div>
 	</section>
 

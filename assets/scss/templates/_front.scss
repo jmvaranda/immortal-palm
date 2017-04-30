@@ -302,9 +302,9 @@ $background-gray: rgba(0,0,0,0.025);
 // Why UMC
 .why-umc {@include grid-row();}
 .testimonials-module {
-  @include breakpoint(medium) {
-    @include grid-column(8);
-  }
+    @include breakpoint(medium) {
+      @include grid-column(8);
+    }
 
   @include breakpoint(small) {
     @include grid-column(12);
